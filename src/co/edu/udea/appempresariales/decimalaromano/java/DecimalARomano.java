@@ -13,8 +13,9 @@ public class DecimalARomano {
 	 * @return String[] Con los numeros convertidos a romano
 	 */
 	public String[] convertirDecimalARomano(){
-		convertidos = new String[2];
+		convertidos = new String[6];
 		convertidos[1] = "I";
+		convertidos[5] = "V";
 		return convertidos;
 	}
 
