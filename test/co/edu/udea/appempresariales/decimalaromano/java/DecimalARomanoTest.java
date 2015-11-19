@@ -9,6 +9,7 @@ public class DecimalARomanoTest {
 
 	DecimalARomano convertidor;
 	String convertido[];
+	private final String  ONETOTEN ="IIIIIIIVVVIVIIVIIIIXX";
 	
 	/**
 	 * Prueba unitaria encargada de verificar que el metodo puedo convertir el numero 1 
@@ -30,6 +31,18 @@ public class DecimalARomanoTest {
 		convertidor = new DecimalARomano();
 		convertido = convertidor.convertirDecimalARomano();
 		assertEquals("V", convertido[5]);
+	}
+	
+	/**
+	 * Prueba unitaria encargada de verificar que el metodo puedo convertir los numeros 
+	 * del 1 al 10 decimales a romanos
+	 */
+	@Test
+	public void converOneToTen() {
+		convertidor = new DecimalARomano();
+		convertido = convertidor.convertirDecimalARomano();
+		String oneToTenRomanos = String.join("", convertido);
+		assertEquals(ONETOTEN, oneToTenRomanos);
 	}
 
 }
