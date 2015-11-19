@@ -10,15 +10,26 @@ public class DecimalARomanoTest {
 	DecimalARomano convertidor;
 	String convertido[];
 	
-	@Test
 	/**
 	 * Prueba unitaria encargada de verificar que el metodo puedo convertir el numero 1 
 	 * a Romano
 	 */
+	@Test
 	public void converOne() {
 		convertidor = new DecimalARomano();
 		convertido = convertidor.convertirDecimalARomano();
 		assertEquals("I", convertido[1]);
+	}
+	
+	/**
+	 * Prueba unitaria encargada de verificar que el metodo puedo convertir el numero 5 
+	 * a Romano
+	 */
+	@Test
+	public void converFive() {
+		convertidor = new DecimalARomano();
+		convertido = convertidor.convertirDecimalARomano();
+		assertEquals("V", convertido[5]);
 	}
 
 }
