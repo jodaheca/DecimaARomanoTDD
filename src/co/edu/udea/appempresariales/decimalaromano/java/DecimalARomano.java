@@ -7,11 +7,12 @@ public class DecimalARomano {
 			"VII", "VIII", "IX" };
 	public final String decenas[] = { "", "X", "XX", "XXX", "XL", "L", "LX",
 			"LXX", "LXXX", "XC" };
+	public final String centenas[] = {"", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"};
 	char[] numToCaracter; // variable para guardar le número en un arreglo de
 							// caracteres
 	private String unidad = "", decena = "", centena = "", mil = "";
 	String numeroFinal; // Variable para guardar el numero convertido en Romano
-	private int limite = 99;
+	private int limite = 999;
 
 	public DecimalARomano() {
 
@@ -25,7 +26,7 @@ public class DecimalARomano {
 	 */
 	public String[] convertirDecimalARomano() {
 
-		convertidos = new String[100];
+		convertidos = new String[1000];
 		convertidos[0] = "-";
 		for (int i = 1; i <= limite; i++) {
 			String valor = Integer.toString(i); // String con el número
@@ -39,7 +40,7 @@ public class DecimalARomano {
 
 			case 2:
 
-				numToCaracter = valor.toCharArray(); // convertimos el número a caracteres
+				numToCaracter = valor.toCharArray(); // convierto el número a caracteres
 				decena = Character.toString(numToCaracter[0]);
 				unidad = Character.toString(numToCaracter[1]);
 				decena = decenas[Integer.parseInt(decena)];
@@ -47,6 +48,18 @@ public class DecimalARomano {
 				numeroFinal = decena + unidad;
 				convertidos[i] = numeroFinal;
 				break;
+				
+			 case 3:
+                 numToCaracter = valor.toCharArray(); // convierto el número a caracteres
+                 centena = Character.toString(numToCaracter[0]);
+                 decena = Character.toString(numToCaracter[1]);
+                 unidad = Character.toString(numToCaracter[2]);
+                 centena = centenas[Integer.parseInt(centena)];
+                 decena = decenas[Integer.parseInt(decena)];
+                 unidad = unidades[Integer.parseInt(unidad)];
+                 numeroFinal = centena + decena + unidad;
+                 convertidos[i] = numeroFinal;
+                 break;	
 
 			default:
 			}
