@@ -5,13 +5,13 @@ public class DecimalARomano {
 	private String convertidos[];
 	private final String unidades[] = { "", "I", "II", "III", "IV", "V", "VI",
 			"VII", "VIII", "IX" };
-	public final String decenas[] = { "", "X", "XX", "XXX", "XL", "L", "LX",
+	private final String decenas[] = { "", "X", "XX", "XXX", "XL", "L", "LX",
 			"LXX", "LXXX", "XC" };
-	public final String centenas[] = {"", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"};
+	private final String centenas[] = {"", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"};
 	char[] numToCaracter; // variable para guardar le número en un arreglo de
 							// caracteres
 	private String unidad = "", decena = "", centena = "", mil = "";
-	String numeroFinal; // Variable para guardar el numero convertido en Romano
+	private String numeroFinal; // Variable para guardar el numero convertido en Romano
 	private int limite = 999;
 
 	public DecimalARomano() {
