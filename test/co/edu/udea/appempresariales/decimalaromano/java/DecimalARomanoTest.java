@@ -289,9 +289,7 @@ public class DecimalARomanoTest {
 		convertidor = new DecimalARomano();
 		convertido = convertidor.convertirDecimalARomano();
 		String oneToOneThousandRomanos = String.join("-", convertido);
-		System.out.println("String: " + oneToOneThousandRomanos );
 		oneToOneThousandRomanos = oneToOneThousandRomanos.substring(0,7002);
-		System.out.println("SubString: " + oneToOneThousandRomanos );
 		assertEquals(ONETOONETHOUSAND, oneToOneThousandRomanos);
 	}
 

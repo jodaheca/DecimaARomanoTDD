@@ -8,11 +8,13 @@ public class DecimalARomano {
 	private final String decenas[] = { "", "X", "XX", "XXX", "XL", "L", "LX",
 			"LXX", "LXXX", "XC" };
 	private final String centenas[] = {"", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"};
+	private final String miles[] = {"", "M"};
+	
 	char[] numToCaracter; // variable para guardar le número en un arreglo de
 							// caracteres
 	private String unidad = "", decena = "", centena = "", mil = "";
 	private String numeroFinal; // Variable para guardar el numero convertido en Romano
-	private int limite = 999;
+	private int limite = 1000;
 
 	public DecimalARomano() {
 
@@ -26,7 +28,7 @@ public class DecimalARomano {
 	 */
 	public String[] convertirDecimalARomano() {
 
-		convertidos = new String[1000];
+		convertidos = new String[1001];
 		convertidos[0] = "-";
 		for (int i = 1; i <= limite; i++) {
 			String valor = Integer.toString(i); // String con el número
@@ -60,6 +62,22 @@ public class DecimalARomano {
                  numeroFinal = centena + decena + unidad;
                  convertidos[i] = numeroFinal;
                  break;	
+            
+			 case 4:
+                 numToCaracter = valor.toCharArray(); // convierto el número a caracteres
+                 mil = Character.toString(numToCaracter[0]);
+                 centena = Character.toString(numToCaracter[1]);
+                 decena = Character.toString(numToCaracter[2]);
+                 unidad = Character.toString(numToCaracter[3]);
+                 mil = miles[Integer.parseInt(mil)];
+                 centena = centenas[Integer.parseInt(centena)];
+                 decena = decenas[Integer.parseInt(decena)];
+                 unidad = unidades[Integer.parseInt(unidad)];
+                 numeroFinal = mil + centena + decena + unidad;
+                 convertidos[i] = numeroFinal;
+                 
+                 System.out.println( i + " = " + convertidos[i]);
+                 break;     
 
 			default:
 			}
