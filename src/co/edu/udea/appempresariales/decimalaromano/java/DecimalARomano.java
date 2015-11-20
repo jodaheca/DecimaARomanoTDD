@@ -37,7 +37,6 @@ public class DecimalARomano {
 			switch (longitud) {
 			case 1:
 				convertidos[i] = unidades[i];
-				System.out.println(i + " = " + convertidos[i]);
 				break;
 
 			case 2:
@@ -75,8 +74,6 @@ public class DecimalARomano {
                  unidad = unidades[Integer.parseInt(unidad)];
                  numeroFinal = mil + centena + decena + unidad;
                  convertidos[i] = numeroFinal;
-                 
-                 System.out.println( i + " = " + convertidos[i]);
                  break;     
 
 			default:
