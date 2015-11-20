@@ -17,6 +17,7 @@ public class DecimalARomano {
 	public String[] convertirDecimalARomano(){
 		
 		convertidos = new String[10];
+		convertidos[0] ="-" ;
 		for (int i = 1; i <= limite; i++) {
 			convertidos[i] = unidades[i];
 		}
