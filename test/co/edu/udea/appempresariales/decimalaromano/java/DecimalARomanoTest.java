@@ -64,7 +64,21 @@ public class DecimalARomanoTest {
 		convertidor = new DecimalARomano();
 		convertido = convertidor.convertirDecimalARomano();
 		String oneToNinetyNineRomanos = String.join("-", convertido);
+		oneToNinetyNineRomanos = oneToNinetyNineRomanos.substring(0,500);
 		assertEquals(ONETONINETYNINE, oneToNinetyNineRomanos);
+	}
+	
+	/**
+	 * Prueba unitaria encargada de verificar que el metodo puedo convertir los numeros 
+	 * del 1 al 999 decimales a romanos
+	 */
+	@Test
+	public void converOneToNineNineNine() {
+		convertidor = new DecimalARomano();
+		convertido = convertidor.convertirDecimalARomano();
+		String oneToNineNineNineRomanos = String.join("-", convertido);
+		oneToNineNineNineRomanos = oneToNineNineNineRomanos.substring(0,500);
+		assertEquals(ONETONINETYNINE, oneToNineNineNineRomanos);
 	}
 
 }
